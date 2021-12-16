@@ -170,7 +170,7 @@ var krin1 = L.marker([37.97157499400847, 23.721057213077984],{
     title: "Κρήνη Καλλιρόη Πνύκας",
     opacity: 0.9,
     icon: redIcon
-}).bindPopup('<h2>Κρήνη Καλλιρόη Πνύκας</h2><p> </p>');
+}).bindPopup('<h2>Κρήνη Καλλιρόη Πνύκας</h2><p></p>');
 
 var krin2 = L.marker([37.977637435465134, 23.73161202231567],{
     title: "Κρήνη Λέκκα",
@@ -182,7 +182,7 @@ var krin3 = L.marker([37.98263698219047, 23.705320722877204],{
     title: "Κρήνη του Χασέκη",
     opacity: 0.9,
     icon: redIcon
-}).bindPopup('<h2>Κρήνη του Χασέκη</h2><p>Περιβάλλων χώρος Γεωπονικού Πανεπιστημίου</p>');
+}).bindPopup('<h2>Κρήνη του Χασέκη</h2><p>Περιβάλλων χώρος Γεωπονικού Πανεπιστημίου</p> <img src="xaseki.webp" alt="xaseki">');
 
 var krin4 = L.marker([37.997566437443666, 23.727551813078588],{
     title: "Κρήνη του Αλί Αγά",
@@ -277,10 +277,15 @@ var overlays = {
     "Δημόσιες Κρήνες της Αθήνας" : krinMarkers
 }
 
-L.control.layers(null,overlays).addTo(map);
+
+layerControl = L.control.layers(null, overlays, {position: 'bottomright'});
+layerControl.addTo(map);
 
 
-var legend = L.control({ position: "bottomleft" });
+//L.control.layers(null,overlays).addTo(map);
+
+
+var legend = L.control({ position: "topright" });
 
 legend.onAdd = function(map) {
   var div = L.DomUtil.create("div", "legend2");
