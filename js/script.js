@@ -278,7 +278,7 @@ var overlays = {
 }
 
 
-layerControl = L.control.layers(null, overlays, {position: 'bottomright'});
+layerControl = L.control.layers(null, overlays, {position: 'topleft'});
 layerControl.addTo(map);
 
 
