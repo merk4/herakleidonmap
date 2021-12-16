@@ -1,11 +1,11 @@
 console.log('developed by Nikolaos Merkouris ©2021');
 
 //map init
-var map = L.map('map' , {attributionControl: false}).setView([38.060,23.790], 12.4);
+var map = L.map('map' , {attributionControl: false}).setView([38.060,23.790], 12);
 
 //osm layer 
 var osm = L.tileLayer('https://api.mapbox.com/styles/v1/herakleidonmap/ckv6v483y7zjj14s7o5rzaxn0/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiaGVyYWtsZWlkb25tYXAiLCJhIjoiY2t1c2k0dHl4MTdtYTJvczdqNTltM2V2ZyJ9.e4bAo8MBc9xJ8WHROBox0g', {
-    maxZoom: 18,
+    maxZoom: 15,
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
@@ -14,7 +14,7 @@ var osm = L.tileLayer('https://api.mapbox.com/styles/v1/herakleidonmap/ckv6v483y
 osm.addTo(map);
 
 // help gia sintentagmenes
-var popup = L.popup();
+/*var popup = L.popup();
 
 function onMapClick(e) {
      popup
@@ -24,7 +24,7 @@ function onMapClick(e) {
 }
 
  map.on('click', onMapClick);
-
+*/
 
 var violetIcon = new L.Icon({
   iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-violet.png',
@@ -46,6 +46,17 @@ var orangeIcon = new L.Icon({
   opacity: 0.7
 });
 
+var redIcon = new L.Icon({
+  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+  shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+  iconSize: [23,39],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
+  shadowSize: [39, 39],
+  opacity: 0.7
+});
+
+
 
 //Group for zoom hide function  
 
@@ -53,7 +64,7 @@ var pisiMarkers = L.markerClusterGroup();
 
 var adrMarkers = L.markerClusterGroup();
 
-//var krinesMarkers = new L.FeatureGroup();
+var krinMarkers = L.markerClusterGroup();
 
 
 var pisi2 = L.marker([37.972161, 23.721247],{
@@ -155,6 +166,54 @@ var adr6 = L.marker([37.97889743565375, 23.741603518072193],{
 }).bindPopup('<h2>Κολωνάκι- Πλ. Δεξαμενής</h2><p>Το Αδριάνειο Υδραγωγείο κατέληγε σε λιθόκτιστη δεξαμενή, η οποία κατασκευάστηκε στο λόφο του Λυκαβηττού (σημερινή Πλατεία Δεξαμενής, Κολωνάκι)και ανακαλύφθηκε το 1870. Η Αδριάνεια Δεξαμενή είχε χωρητικότητα 500 κυβικά μέτρα. Χαρακτηριστικό  της  αποτελεί το πρόπυλο από τέσσερις κίονες  ιωνικού ρυθμού και η επιγραφή στην οποία γίνεται αναφορά στους δύο Ρωμαίους αυτοκράτορες που ήταν υπεύθυνοι για την κατασκευή του υδραγωγείου, Αδριανό και  Αντωνίνο.  Η Δεξαμενή λειτουργούσε κανονικά μέχρι την περίοδο της  Τουρκοκρατίας , κατά την διάρκεια της οποίας  το Υδραγωγείο εγκαταλείφτηκε.  Η ανακάλυψη πρώτα  του Υδραγωγείου και έπειτα της δεξαμενής ήταν αποτέλεσμα των υδρευτικών αναγκών της πόλης μετά την απελευθέρωση της  χώρας από τους Τούρκους. Η Δεξαμενή ανακατασκευάστηκε, φτάνοντας τα 2200 κυβικά μέτρα. Η λειτουργία της συνεχίστηκε μέχρι το 1940. Σήμερα, είναι επισκέψιμη και αποτελεί ένα από τα πιο ενδιαφέροντα αξιοθέατα στο κέντρο της Αθήνας.</p>');
 
 
+var krin1 = L.marker([37.97157499400847, 23.721057213077984],{
+    title: "Κρήνη Καλλιρόη Πνύκας",
+    opacity: 0.9,
+    icon: redIcon
+}).bindPopup('<h2>Κρήνη Καλλιρόη Πνύκας</h2><p> </p>');
+
+var krin2 = L.marker([37.977637435465134, 23.73161202231567],{
+    title: "Κρήνη Λέκκα",
+    opacity: 0.9,
+    icon: redIcon
+}).bindPopup('<h2>Κρήνη Λέκκα</h2><p></p>');
+
+var krin3 = L.marker([37.98263698219047, 23.705320722877204],{
+    title: "Κρήνη του Χασέκη",
+    opacity: 0.9,
+    icon: redIcon
+}).bindPopup('<h2>Κρήνη του Χασέκη</h2><p>Περιβάλλων χώρος Γεωπονικού Πανεπιστημίου</p>');
+
+var krin4 = L.marker([37.997566437443666, 23.727551813078588],{
+    title: "Κρήνη του Αλί Αγά",
+    opacity: 0.9,
+    icon: redIcon
+}).bindPopup('<h2>Κρήνη του Αλί Αγά</h2><p>Άγιος Παντελεήμων, Πατήσια</p>');
+
+var krin5 = L.marker([37.97514484125792, 23.735813403279106],{
+    title: "Κρήνη Μπουμπουνίστρα",
+    opacity: 0.9,
+    icon: redIcon
+}).bindPopup('<h2>Κρήνη Μπουμπουνίστρα</h2><p></p>');
+
+var krin6 = L.marker([37.97859680190821, 23.72496534191348],{
+    title: "Κρήνη του Ψυρρή",
+    opacity: 0.9,
+    icon: redIcon
+}).bindPopup('<h2>Κρήνη του Ψυρρή</h2><p></p>');
+
+var krin7 = L.marker([37.971671831952854, 23.726146164644742],{
+    title: "Κρήνη Κλεψύδρα",
+    opacity: 0.9,
+    icon: redIcon
+}).bindPopup('<h2>Κρήνη Κλεψύδρα</h2><p>Βορειοδυτική γωνία του βράχου της Ακρόπολης.</p>');
+
+var krin8 = L.marker([37.974420615623075, 23.726898009383042],{
+    title: "Κρήνη των Αέρηδων",
+    opacity: 0.9,
+    icon: redIcon
+}).bindPopup('<h2>Κρήνη των Αέρηδων</h2><p>Ωρολόγιο Ανδρονίκου Κυρρήστου</p>');
+
 pisiMarkers.addLayer(pisi2);
 pisiMarkers.addLayer(pisi3);
 pisiMarkers.addLayer(pisi4);
@@ -173,10 +232,19 @@ adrMarkers.addLayer(adr4);
 adrMarkers.addLayer(adr5);
 adrMarkers.addLayer(adr6);
 
+krinMarkers.addLayer(krin1);
+krinMarkers.addLayer(krin2);
+krinMarkers.addLayer(krin3);
+krinMarkers.addLayer(krin4);
+krinMarkers.addLayer(krin5);
+krinMarkers.addLayer(krin6);
+krinMarkers.addLayer(krin7);
+krinMarkers.addLayer(krin8);
 
 
 map.addLayer(pisiMarkers);
 map.addLayer(adrMarkers);
+map.addLayer(krinMarkers);
 
 
 /*map.on('zoomend', function() {
@@ -203,8 +271,16 @@ legend.onAdd = function(map) {
 };
 legend.addTo(map);
 
-//
-var legend = L.control({ position: "topright" });
+var overlays = {
+    "Αδριάνειο" : adrMarkers,
+    "Πεισιστράτειο" : pisiMarkers,
+    "Δημόσιες Κρήνες της Αθήνας" : krinMarkers
+}
+
+L.control.layers(null,overlays).addTo(map);
+
+
+var legend = L.control({ position: "bottomleft" });
 
 legend.onAdd = function(map) {
   var div = L.DomUtil.create("div", "legend2");
@@ -212,3 +288,5 @@ legend.onAdd = function(map) {
   return div;
 };
 legend.addTo(map);
+
+
