@@ -5,7 +5,7 @@ var map = L.map('map' , {attributionControl: false}).setView([38.060,23.790], 12
 
 //osm layer 
 var osm = L.tileLayer('https://api.mapbox.com/styles/v1/herakleidonmap/ckv6v483y7zjj14s7o5rzaxn0/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiaGVyYWtsZWlkb25tYXAiLCJhIjoiY2t1c2k0dHl4MTdtYTJvczdqNTltM2V2ZyJ9.e4bAo8MBc9xJ8WHROBox0g', {
-    maxZoom: 15,
+    maxZoom: 16,
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
