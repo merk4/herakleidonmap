@@ -1,5 +1,11 @@
 #map {position: absolute; top: 0; bottom: 0; left: 0; right: 0;}
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+
+*{
+  font-family: 'Roboto', sans-serif; !important
+}
+
 .popimg {
 	height: 100%;
 	width: 100%;
@@ -17,7 +23,7 @@
 /*Legend specific*/
 .legend {
   padding: 6px 8px;
-  font: 16px Arial, Helvetica, sans-serif;
+  font: 16px Roboto, sans-serif;
   background: white;
   background: rgba(255, 255, 255, 0.8);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -47,7 +53,7 @@
 .info {
 	position: bottomleft ;
     padding: 6px 8px;
-    font: 26px/20px Arial, Helvetica, sans-serif;
+    font: 26px/20px Roboto, sans-serif;
     background: transparent;
     background: transparent;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -64,7 +70,7 @@
 
 .legend2 {
   padding: 6px 8px;
-  font: 16px Arial, Helvetica, sans-serif;
+  font: 16px Roboto, sans-serif;
   background: transparent;
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
@@ -72,3 +78,4 @@
   line-height: 24px;
   color: #555;
 }
+
