@@ -81,7 +81,7 @@ body {
   /* Pull out the header and footer */
   .masthead {
     position: fixed;
-    top: 0;
+    top: 10;
   }
   /* Start the vertical centering */
   .site-wrapper-inner {
